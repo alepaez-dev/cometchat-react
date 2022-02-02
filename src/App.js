@@ -1,23 +1,49 @@
 import logo from './logo.svg';
 import './App.css';
+import * as CONSTANTS from "./constants/constants";
+import { CometChat } from "@cometchat-pro/chat"
+
+// UI KIT
+import { CometChatUI } from "./cometchat-pro-react-ui-kit/CometChatWorkspace/src";
+
+const createUserCometchat = (uid, name) => {
+  let user = new CometChat.User(uid);
+  user.setName(name);
+    
+  CometChat.createUser(user, CONSTANTS.AUTH_KEY).then(
+    user => {
+      console.log("user created", user);
+    }, error => {
+      console.log("error", error)
+    }
+  )
+}
+
+const loginUserCometchat  = (uid) => {
+  CometChat.login(uid, CONSTANTS.AUTH_KEY).then(
+    user => {
+      console.log("Login successful", { user });
+    }, 
+    error => {
+      console.log("Login failed with exception", { error })
+    }
+  )
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <button onClick={() => createUserCometchat("user1", "Alejandra Paez")}>
+        Crear usuario
+      </button>
+
+      <button onClick={() => loginUserCometchat("user1")}>
+        Login
+      </button> */}
+
+      <CometChatUI />
+
+
     </div>
   );
 }

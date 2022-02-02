@@ -11,7 +11,7 @@ CometChat.init(CONSTANTS.APP_ID, appSetting).then(
   () => {
     console.log("Initialization completed succesffully by Ale Paez");
   // You can now call login function.
-  
+
     ReactDOM.render(
       <React.StrictMode>
         <App />
