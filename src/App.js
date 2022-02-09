@@ -33,15 +33,17 @@ const loginUserCometchat  = (uid) => {
 function App() {
   return (
     <div className="App">
-      {/* <button onClick={() => createUserCometchat("user1", "Alejandra Paez")}>
+      <button onClick={() => createUserCometchat("user1", "Alejandra Paez")}>
         Crear usuario
       </button>
 
       <button onClick={() => loginUserCometchat("user1")}>
         Login
-      </button> */}
+      </button>
 
-      <CometChatUI />
+      <div style={{ width: "800px", height: "800px" }}>
+        <CometChatUI />
+      </div>
 
 
     </div>
