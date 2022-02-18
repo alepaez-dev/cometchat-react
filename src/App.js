@@ -37,7 +37,7 @@ function App() {
         Crear usuario
       </button>
 
-      <button onClick={() => loginUserCometchat("user1")}>
+      <button onClick={() => loginUserCometchat("bere1")}>
         Login
       </button>
 
